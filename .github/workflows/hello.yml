@@ -1,0 +1,25 @@
+name: Hello World Pipeline    # Appears in GitHub UI under Actions tab
+
+on:                          # WHEN to run
+  push:
+    branches:
+      - main                  # Only run when pushing to 'main'
+  workflow_dispatch:         # Also allow manual trigger from GitHub UI
+
+jobs:                         # WHAT to run
+  say-hello:                  # Job name (you choose this)
+    runs-on: ubuntu-latest   # GitHub gives you a fresh Ubuntu VM
+
+    steps:                    # Sequential tasks inside this job
+
+      - name: Print a message  # Human-readable step name
+        run: echo "Hello, Keerthana!"   # Shell command to run
+
+      - name: Show current directory
+        run: pwd && ls -la
+
+      - name: Multi-line shell command
+        run: |                   # | means multi-line string
+          echo "Step 1: Installing deps"
+          echo "Step 2: Running tests"
+          echo "Done!"
