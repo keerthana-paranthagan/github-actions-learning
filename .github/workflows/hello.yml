@@ -1,3 +1,6 @@
+# .github/workflows/hello-world.yml
+# This is the simplest possible workflow — a good first file
+
 name: Hello World Pipeline    # Appears in GitHub UI under Actions tab
 
 on:                          # WHEN to run
